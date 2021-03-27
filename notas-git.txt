@@ -1,0 +1,106 @@
+Comandos básicos en la terminal:
+
+pwd: Nos muestra la ruta de carpetas en la que te encuentras ahora mismo.
+mkdir: Nos permite crear carpetas (por ejemplo, mkdir Carpeta-Importante).
+touch: Nos permite crear archivos (por ejemplo, touch archivo.txt).
+rm: Nos permite borrar un archivo o carpeta (por ejemplo, rm archivo.txt). Mucho cuidado con este comando, puedes borrar todo tu disco duro.
+cat: Ver el contenido de un archivo (por ejemplo, cat nombre-archivo.txt).
+ls: Nos permite cambiar ver los archivos de la carpeta donde estamos ahora mismo. Podemos usar uno o más argumentos para ver más información sobre estos archivos (los argumentos pueden ser -- + el nombre del argumento o - + una sola letra o shortcut por cada argumento).
+- ls -a: Mostrar todos los archivos, incluso los ocultos.
+- ls -l: Ver todos los archivos como una lista.
+cd: Nos permite navegar entre carpetas.
+- cd /: Ir a la ruta principal:
+- cd o cd ~: Ir a la ruta de tu usuario
+- cd carpeta/subcarpeta: Navegar a una ruta dentro de la carpeta donde estamos ahora mismo.
+- cd .. (cd + dos puntos): Regresar una carpeta hacia atrás.
+- Si quieres referirte al directorio en el que te encuentras ahora mismo puedes usar cd . (cd + un punto).
+history: Ver los últimos comandos que ejecutamos y un número especial con el que podemos repetir su ejecución.
+! + número: Ejecutar algún comando con el número que nos muestra el comando history (por ejemplo, !72).
+clear: Para limpiar la terminal. También podemos usar los atajos de teclado Ctrl + L o Command + L.
+Todos estos comandos tiene una función de autocompletado, o sea, puedes escribir la primera parte y presionar la tecla Tab para que la terminal nos muestre todas las posibles carpetas o comandos que podemos ejecutar. Si presionas la tecla Arriba puedes ver el último comando que ejecutamos.
+
+Recuerda que podemos descubrir todos los argumentos de un comando con el argumento --help (por ejemplo, cat --help).
+
+---------------------------------------------------------------
+
+Comandos básicos de Git
+
+git init: lo usamos para determinar la carpeta en la que vamos a trabajar.
+
+git status: lo usamos para saber si tenemos un archivo añadido o borrado en nuestro proyecto, para saber en la rama en la que estamos y si tenemos commits.
+
+git add: es para añadir un archivo a nuestra rama seguidamente ponemos entre comillas el nombre de nuestro archivo o poner un punto para añadir todos los archios de nuestra carpeta.
+
+git rm: lo usamos para borrar un archivo que hayamos añadido, para eliminarlo por completo de nuestra rama usamosgit rm --cached.
+
+git commit: se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas nuestro ensaje.
+
+git config: muestra configuraciones de git también podemos usar –list para mostrar la configuración por defecto de nuestro git y si añadimos --show-origin inhales nos muestra las configuraciones guardadas y su ubicación.
+
+git config --global user.name: cambia de manera global el nombre del usuario, seguidamente ponemos entre comillas nuestro nombre.
+
+git config --global user.email: cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro nombre.
+
+git log: se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se realizaron los cambios etc. seguidamente ponemos el nombre de nuestro archivo.
+
+git diff: se usa para compara archivos entre si 
+
+*********************************************************
+
+Para copiar y pegar automaticamente basta con seleccionart la linea y hacer clic con el scroll del mouse 
+despues de esto se pegara autoamticamnete en la linea activa
+*****************************************************************************************************
+Comandos de VIM
+
+Los modos de Vim
+La clave para aprender a manejar Vim es acostumbrarse a sus distintos modos de funcionamiento. Esta es la parte que hace a Vim especial y difícil de entender para las personas que se inician.
+
+Modo comando
+Cuando abrimos un archivo para editar con Vim, algo que conseguimos desde el terminal con el comando vim seguido del nombre del archivo que se desea editar.
+
+vim archivo.txt
+Una vez abierto Vim, se inicia en modo comando.
+
+El modo comando permite realizar gran cantidad de acciones administrativas sobre el fichero, como buscar en el texto, salir, guardar, borrar líneas, etc.
+
+Modo inserción
+El modo inserción nos sirve cuando queremos editar el texto del archivo, añadiendo nuevo contenido con el teclado, o borrando carácter a carácter con las correspondientes teclas (Retroceso/Supr).
+
+Estando en modo comando, pasamos a modo inserción pulsando la tecla i. A partir de entonces el editor funcionará tal y como se esperaría en un editor de texto. Es decir, escribes cualquier cosa y se va introduciendo el texto en el archivo.
+
+Para salir del modo inserción y volver al modo comando pulsamos la tecla escape Esc.
+
+Guía esencial de Vim
+Ahora veamos los comandos más útiles y necesarios para que nuestros primeros pasos con Vim sean más llevaderos. Recuerda que estos comandos los tienes que escribir en modo comando y no en modo inserción.
+
+Para algunos de estos comandos es necesario pulsar la tecla Enter para que realmente se ejecuten. En este caso, los comandos aparecerán en la parte de abajo del terminal, para que veamos qué es lo que se va a ejecutar.
+
+Guardar y cerrar
+:w – Permite guardar el fichero.
+:q – Salir de Vim. Si el fichero ha sido modificado pero no se ha guardado, nos advertirá y no podremos salir de Vim usando este comando.
+:q! – Salir de Vim, descartando posibles cambios no guardados que se hayan realizado en el fichero.
+:wq – Hace el guardado del archivo y después sale de Vim.
+Deshacer y rehacer
+u – Deshacer acción.
+Ctrl+r – Rehacer una acción.
+Moverse por el fichero
+Además de usar los cursores para movernos por el archivo, podemos movernos de una manera más rápida con algunos comandos:
+
+gg – Ponerse al inicio del fichero.
+Mayús+g – Ir a la última línea del fichero.
+Num+G – Ir a una línea determinada. Por ejemplo 14G llevaría el cursor a la línea 14.
+:set number – Hace que el editor muestre el número de las líneas.
+$ – Ir al final de la línea.
+0 – Ir al principio de la línea.
+Borrar líneas
+dd – El comando permite borrar la línea actual, donde está el cursor.
+d+num – Este comando permite borrar un número de líneas. Por ejemplo, d3 borrará tres líneas.
+Buscar
+Vim tiene unas herramientas muy potentes para buscar texto en los archivos. Los comandos más útiles son los siguientes:
+
+/+texto – Al pulsar «/» se abre la función de búsqueda. Entonces podremos escribir el texto que queremos buscar. El editor resaltará todas las apariciones de este texto. Pulsamos enter y nos llevará a la siguiente aparición de la búsqueda, con respecto a la posición de nuestro cursor.
+n y N – Una vez hemos aceptada una búsqueda, el comando n nos lleva a la siguiente aparición de la cadena buscada. El comando N nos llevará a la anterior.
+Otras ayudas
+Con estos comandos te aseguramos que te podrás defender por Vim con cierta agilidad, de modo que puedas realizar las tareas de edición más comunes. Además, desde Vim puedes hacer lo siguiente:
+
+:h – Abre la ayuda principal de Vim. Esto hacer que nuestra ventana de terminal se divida en dos editores. En este momento nuestro cursor estará en el texto del archivo de ayuda de Vim. Podremos leer el fichero y utilizar las funciones de búsqueda comentadas con anterioridad. Cuando queramos salir tenemos que hacerlo como cualquier otro fichero, usando el comando correspondiente de Vim, por ejemplo :q. 
